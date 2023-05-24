@@ -1,0 +1,48 @@
+/* css class for the inputs*/
+.inputs  { 
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    background-color: #ffffff;  
+    border: 1px solid #CACACA; 
+    color: #444; 
+    font-size: 1.1em; 
+    margin: 0px 10px 0px 0px; 
+    padding-left: 2px;
+    width:200px; 
+} 
+/* css class for the input focus */
+.inputs:focus { 
+    -webkit-box-shadow: 0 0 25px #CCC; 
+    -moz-box-shadow: 0 0 25px #cccc00; 
+    box-shadow: 0 0 25px #CCCC00; 
+    -webkit-transform: scale(1.05); 
+    -moz-transform: scale(1.05); 
+    transform: scale(1.05); 
+} 
+
+/* css class for fancy buttons */
+.lbutton 
+{   
+    background-color:#ffffff;
+    display:inline-block;
+    cursor:pointer;
+    color:#454545;
+    font-family:arial;
+    font-size:12px;
+    font-weight:bold;
+    padding:2px 12px;
+    border: none;
+    
+}
+/* css class for fancy buttons on hover */
+.lbutton:hover {
+    background-color:#454545;
+    color: #ffffff;
+}
+/* css class for fancy buttons on click */
+.lbutton:active {
+    position:relative;
+    top:1px;
+}
+
+

@@ -1,0 +1,51 @@
+/*For elements with id wrapper*/
+#wrapper {
+    margin-left:auto;
+    margin-right:auto;    	
+}
+/*For elements with id title*/
+#title {
+    position: relative;   
+    margin: 1px 0px 0px 0px;        
+}
+/*For elements with id wlogine_and_search*/
+#login_and_search {
+    position: relative;    
+    margin: 0px 0px 5px 0px;    
+}
+/*For elements with id login*/
+#login {    
+    float: left;      
+    position: relative;    
+}
+/*For elements with id search*/
+#search {  
+    float: right;    
+    position: relative;   
+}
+/*For elements with id top*/
+#top {
+    position: relative;
+    overflow: hidden; 
+}
+/*For elements with id bottom*/
+#bottom {
+    position: relative;   
+}
+/*For elements with id left*/
+#left {
+    float: left;      
+}
+/*For elements with id logo*/
+#logo {
+    float: left;          
+}
+/*For elements with id right*/
+#right {
+    float: right;       
+}
+/*For elements with id content*/
+#content {      
+    overflow: hidden;    
+}
+

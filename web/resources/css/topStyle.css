@@ -1,0 +1,7 @@
+/* Css id for the top */
+#top {        
+    color: #513593;
+    height:101px;
+    /* Set the header image */
+    background-image:url("#{resource['images/header1.png']}");
+}

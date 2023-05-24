@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f5="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Hey</title>         
+    </h:head>
+    <h:body>
+        <ui:composition template="template/layout.xhtml">     
+
+            <ui:param name="wrapperWidth" value="1055px"/>
+
+            <ui:define name="title">
+                Vegan Electro
+            </ui:define>
+
+            <ui:define name="login">
+                <ui:include src="template/login.xhtml"/>
+            </ui:define>
+            <ui:param name="search" value="true"/>
+            <ui:define name="search">
+                <ui:include src="template/search.xhtml"/>
+            </ui:define>
+            <ui:define name="logo"/>
+
+            <ui:define name="top">     
+            </ui:define>
+
+            <ui:define name="menu">
+                <ui:include src="menu.xhtml" />
+            </ui:define>
+
+            <ui:param name="leftWidth" value="200px"/>
+            <ui:define name="left">
+                <ui:include src="tieredMenu.xhtml"/>
+            </ui:define>
+
+            <ui:param name="right" value="false"/>
+
+            <ui:define name="content">               
+                <h:form>
+                    <div align="center">
+                        <!--The product type, image, and price-->
+                        <h3>#{productBean.product.type}
+                            #{productBean.product.price}</h3>
+                        <h:graphicImage value="#{productBean.product.fakeImage}" 
+                                        height="#{productBean.product.height/8}"
+                                        width="#{productBean.product.width/8}"/>
+                    </div>
+                    <br/><br/>
+                    <h3>Billing Information</h3>
+                    <h:panelGrid columns="4" style="margin-right: 15px; width: 60%">
+
+                        <!--The first name of the buyer-->
+                        <h:outputText value="First Name:"/> 
+                        <h:inputText value="#{userBean.user.firstName}" 
+                                     required="true" id="firstId" requiredMessage="*required"
+                                     f5:placeholder="First Name"/>
+                        <h:message for="firstId" style="color: red;"/>
+
+                         <!--The last name of the buyer-->
+                        <h:outputText value="Last Name:"/>
+                        <h:inputText value="#{userBean.user.lastName}" 
+                                     required="true" id="lastId" requiredMessage="*required"
+                                     f5:placeholder="Last Name"/>
+                        <h:message for="lastId" style="color: red;"/>
+
+                         <!--The address of the buyer-->
+                        <h:outputText value="Address:"/>
+                        <h:inputText value="#{userBean.user.address}" 
+                                     required="true" id="addressId" requiredMessage="*required"
+                                     f5:placeholder="Address"/>
+                        <h:message for="addressId" style="color: red;"/>
+
+                         <!--The phone number of the buyer-->
+                        <h:outputText value="Phone Number:"/>
+                        <h:inputText value="#{userBean.user.phoneNum}"
+                                     required="true" id="phoneId" requiredMessage="*required"
+                                     f5:placeholder="eg. (555) 555-5555"/>
+                        <h:message for="phoneId" style="color: red;"/>
+                    </h:panelGrid>
+                    <br/>
+                    <!--The commandButton calls the method sellProduct() to update
+                    the database and navigate the user to the correct page.-->
+                    <h:commandButton value="Checkout"
+                                     style="background-color: #513593;color: white; border: none"
+                                     action="#{productBean.sellProduct()}"/>
+                    <br/><br/><br/>
+                </h:form>  
+            </ui:define>
+
+            <ui:define name="bottom">
+                SLCC ASDV © 2020. All Rights Reserved.
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

@@ -1,0 +1,7 @@
+/* css for setting and fixing the logo */
+#logo {
+    background-image:url("#{resource['images/pc/pc.png']}");
+    margin-right: 1px;
+    width:112px;
+    height:101px;
+}

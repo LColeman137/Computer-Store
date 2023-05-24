@@ -1,0 +1,16 @@
+/* zoom class which displays content at 0.75 scale*/
+.zoom
+{
+    transform: scale(0.75);
+}
+/* zoom class which enlarges to content to full size on hover */
+.zoom:hover
+{
+    transform: scale(1.0);
+    transition: transform .5s ease;
+}
+/* Table row css */
+tr
+{
+    padding: 10px;
+}

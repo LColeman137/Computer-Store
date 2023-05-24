@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f5="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title></title>         
+    </h:head>
+    <h:body>
+        <ui:composition template="template/layout.xhtml">     
+            <ui:param name="wrapperWidth" value="1055px"/>
+            <ui:define name="title">
+                Vegan Electro          
+            </ui:define>
+            <ui:define name="login">
+                <ui:include src="template/login.xhtml"/>
+            </ui:define>
+            <ui:param name="search" value="true"/>
+            <ui:define name="search">
+                <ui:include src="template/search.xhtml"/>
+            </ui:define>
+
+            <ui:define name="logo"/>
+
+            <ui:define name="top">     
+            </ui:define>
+
+            <ui:define name="menu">
+                <ui:include src="menu.xhtml"/>
+            </ui:define>
+            <ui:param name="leftWidth" value="200px"/>
+            <ui:define name="left">
+                <ui:include src="tieredMenu.xhtml"/>
+            </ui:define>
+            <ui:param name="right" value="false"/>
+            <ui:define name="content">
+                <h:form>  
+                    <h3 style="margin-left: 25px;">New User Sign-Up</h3>       
+                    <h:panelGrid columns="3" style="margin-left: 25px; margin-right: 30px; width: 60%">
+
+                        <!--The user email-->
+                        <h:outputText value="Email:"/> 
+                        <h:inputText 
+                            value="#{email}" f5:placeholder="Email"
+                            f5:type="email" id="emailId" />   
+                        <h:outputText value="#{nothing}"/>
+                        <h:outputText value="Username:"/> 
+
+                        <!--The user username-->
+                        <h:inputText value="#{username}" 
+                                     validatorMessage="Username must be 8 or more characters,
+                                     start with a letter, and contain a digit."
+                                     f5:placeholder="Username" id="userId"> 
+                            <f:validateRegex pattern="^[a-zA-Z]+\d+"/>
+                        </h:inputText>
+                        <h:message for="userId" style="color: red"/>
+
+                        <!--The user password-->
+                        <h:outputText value="Password:"/> 
+                        <h:inputSecret value="#{password}"
+                                       validatorMessage="Password must be 8 or more characters,
+                                       start with a letter, and contain a digit." 
+                                       f5:placeholder="Password" id="passwordId"> 
+                            <f:validateRegex pattern="^[a-zA-Z]+\d+" />
+                        </h:inputSecret>
+                        <h:message for="passwordId" style="color: red"/>
+
+                    </h:panelGrid>
+                    <br/><br/>
+                    <div style="margin-left: 25px;">
+                        <!--The commandButton calls the method addUser and adds the
+                        user to the database. Navigates the user via the bean.-->
+                        <h:commandButton value="Create Account" 
+                                         style="background-color: #513593; color: white; border: none"
+                                         action="#{userBean.addUser(password, email, username)}" />
+                    </div>
+                    <br/><br/><br/>
+                </h:form> 
+            </ui:define>
+            <ui:define name="bottom">
+                SLCC ASDV © 2020. All Rights Reserved.
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

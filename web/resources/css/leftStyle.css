@@ -1,0 +1,17 @@
+/*Css for the left css.*/
+#left 
+{
+    border: #454545 solid thin;
+    text-align:left;
+    color: #513593;
+    padding-left:10px;
+    margin-right: 5px;
+}
+/* css for all links*/
+a
+{
+    color: #513593;
+    text-decoration: none;
+    background-color:#ffffff;
+    
+}

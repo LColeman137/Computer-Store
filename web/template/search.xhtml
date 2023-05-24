@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition>
+            <h:form>
+                <!--The text used to search for a product-->
+                <h:inputText id="search" styleClass="inputs" value="#{productBean.search}"/>
+                <!-- The button takes the search string and sets the 
+                    products in the call to method setSearchResult(). 
+                Navigates the user to the search result -->
+                <h:commandButton value="Search" class="lbutton"
+                                 action="#{productBean.setSearchResult()}" onclick="location.reload"/>
+                <h2><h:outputText id="output"/>
+                </h2>
+            </h:form>
+        </ui:composition>
+    </h:body>
+</html>
+

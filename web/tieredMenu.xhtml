@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"        
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+    </h:head>
+    <h:body>
+        <ui:composition>
+            <h:form> 
+                <h:panelGrid columns="1">
+                    <p:growl id="messages" showDetail="true" />
+
+                    <p:commandLink 
+                        id="computerLink" value="Computers"  styleClass="hover" 
+                        style="font-size: 20px;"/>
+
+                    <p:commandLink 
+                        id="phoneLink" value="Phones"  styleClass="hover" 
+                        style="font-size: 20px;"/>
+                    <!--Each menuitem has a parameter which is passed to the
+action listener. Navigates the user to the product page.-->
+                    <p:tieredMenu 
+                        overlay="true" 
+                        trigger="computerLink" 
+                        my="right top" 
+                        at="left bottom" style="width:200px; border: #454545; padding: 0px">
+                        <p:submenu label="PCS" >
+                            <p:menuitem value="apple 27' desktop pc"  action="productForSale2.xhtml?faces-redirect=true"
+                                        actionListener="#{productBean.sendProduct()}" immediate="true" >
+                                <f:param value="0" name="product"/>
+                            </p:menuitem>
+                            <p:menuitem value="cyberpower gaming desktop pc" action="productForSale2.xhtml?faces-redirect=true" 
+                                        actionListener="#{productBean.sendProduct()}" immediate="true">
+                                <f:param value="1" name="product"/>
+                            </p:menuitem>
+                            <p:menuitem value="hp 15.6' laptop" action="productForSale2.xhtml?faces-redirect=true" 
+                                        actionListener="#{productBean.sendProduct()}" immediate="true">
+                                <f:param value="2" name="product"/>
+                            </p:menuitem>
+                            <p:menuitem value="microsoft surface laptop" action="productForSale2.xhtml?faces-redirect=true" 
+                                        actionListener="#{productBean.sendProduct()}" immediate="true">
+                                <f:param value="3" name="product"/>
+                            </p:menuitem>
+                        </p:submenu>
+                    </p:tieredMenu>
+                </h:panelGrid>
+                <p:tieredMenu 
+                    overlay="true" 
+                    trigger="phoneLink" 
+                    my="left top" 
+                    at="left bottom" style="width:200px; border: white; padding: 0px">
+                    <p:submenu label="Phones" styleClass="affaires">
+                        <p:menuitem value="apple iPhone 6s" action="productForSale2.xhtml?faces-redirect=true" 
+                                    actionListener="#{productBean.sendProduct()}" immediate="true">
+                            <f:param value="4" name="product"/>
+                        </p:menuitem>
+                        <p:menuitem value="samsung galaxy fold" action="productForSale2.xhtml?faces-redirect=true" 
+                                    actionListener="#{productBean.sendProduct()}" immediate="true">
+                            <f:param value="5" name="product"/>
+                        </p:menuitem>
+                        <p:menuitem value="google pixel 3a" action="productForSale2.xhtml?faces-redirect=true" 
+                                    actionListener="#{productBean.sendProduct()}" immediate="true">
+                            <f:param value="6" name="product"/>
+                        </p:menuitem>
+                        <p:menuitem value="apple iPhone 11" action="productForSale2.xhtml?faces-redirect=true" 
+                                    actionListener="#{productBean.sendProduct()}" immediate="true">
+                            <f:param value="7" name="product"/>
+                        </p:menuitem>
+                    </p:submenu>
+                </p:tieredMenu>
+            </h:form>
+        </ui:composition>
+    </h:body>
+</html>
+
+
+

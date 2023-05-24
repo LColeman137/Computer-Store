@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f5="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition>
+            <h:form>
+                <!--The input for the user username-->
+                <h:inputText styleClass="inputs"  value="#{username}"
+                             f5:placeholder="Username" immediate="true"/>
+                <!--The input for the user password-->
+                <h:inputSecret  styleClass="inputs" value="#{password}"
+                                f5:placeholder="Password" immediate="true"/>
+                <!--The commandButton calls a method to verify the user information
+                and navigates the user accordingly.-->
+                <h:commandButton  class="lbutton" value="Login" action="#{userBean.verifyUser(username, password)}"/>
+                <h:outputText value="&emsp;&emsp; New User? " style="color: white;"/>
+                <!--The commandButton navigates the user to the new user page.-->
+                <h:commandButton class="lbutton" value="Sign Up" action="newUserForm"/>
+            </h:form>
+        </ui:composition>
+    </h:body>
+</html>
+

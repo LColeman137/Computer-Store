@@ -1,0 +1,14 @@
+/*The content css. Colors the text dark grey*/
+#content
+{
+    color: #454545;
+}
+
+/* The css for the button on buyForm  text-white, color-purple*/
+.buyButton
+{
+    color: #ffffff;
+    background-color: #513593;
+    border: none;
+    padding: 5px;
+}

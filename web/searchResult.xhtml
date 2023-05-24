@@ -1,0 +1,83 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Hey</title>         
+    </h:head>
+    <h:body>
+        <ui:composition template="template/layout.xhtml">     
+
+            <ui:param name="wrapperWidth" value="1055px"/>
+
+            <ui:define name="title">
+                Vegan Electro
+            </ui:define>
+
+            <ui:define name="login">
+                <ui:include src="template/login.xhtml"/>
+            </ui:define>
+
+            <ui:param name="search" value="true"/>
+            <ui:define name="search">
+                <ui:include src="template/search.xhtml"/>
+            </ui:define>
+
+            <ui:define name="logo"/>
+
+            <ui:define name="top">     
+            </ui:define>
+            <ui:define name="menu">
+                <ui:include src="menu.xhtml" />
+            </ui:define>
+
+            <ui:param name="leftWidth" value="200px"/>
+            <ui:define name="left">
+                <ui:include src="tieredMenu.xhtml"/>
+            </ui:define>
+            <ui:param name="right" value="false"/>
+            <ui:define name="content">
+                <!-- Get the search ArrayList to display in a table-->
+                <ui:repeat value="#{productBean.searchResult}" var="prod">
+                    <h:form>
+                        <table style="border: solid #CACACA thin;"  onclick="buyForm">
+                            <tr align="center">
+                                <!--Display the product type-->
+                                <td><h3>#{prod.type}</h3></td>
+                            </tr>
+                            <tr align="center">
+                                <!--Display the product image-->
+                                <td><h:graphicImage value="#{prod.fakeImage}"  
+                                                    height="#{prod.height/3}" width="#{prod.width/3}"/></td>
+                            </tr>
+                            <tr align="center">
+                                <!--Display the product description-->
+                                <td><h:outputText escape="false" value="#{prod.description}"/></td>
+                            </tr>
+                            <tr align="center">
+                                <!--Display the product price-->
+                                <td><h:outputText value="#{prod.price}" style="font-weight: bold"/></td>
+                            </tr>
+                            <tr align="center">
+                                <!-- The button takes the id of the product and sets the 
+                        product in the call to method sendProduct. Navigates the 
+                        user to the buy form -->
+                                <td><h:commandButton  style="width: 200px ; " actionListener="#{productBean.sendProduct()}"
+                                                      value="Buy" action="buyForm">
+                                        <f:param value="#{prod.id}" name="product"/>
+                                    </h:commandButton>
+                                </td>
+                            </tr> 
+                        </table>
+                        <br/><br/>
+                    </h:form>
+                </ui:repeat>
+            </ui:define>
+            <ui:define name="bottom">
+                SLCC ASDV © 2020. All Rights Reserved.
+            </ui:define>
+
+        </ui:composition>
+    </h:body>
+</html>
+

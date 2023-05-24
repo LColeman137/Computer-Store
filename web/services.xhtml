@@ -1,0 +1,74 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Hey</title>         
+    </h:head>
+    <h:body>
+        <ui:composition template="template/layout.xhtml">     
+
+            <ui:param name="wrapperWidth" value="1055px"/>
+
+            <ui:define name="title">
+                Vegan Electro
+            </ui:define>
+
+            <ui:define name="login">
+               <ui:include src="template/login.xhtml"/>
+            </ui:define>
+
+             <ui:param name="search" value="true"/>
+            <ui:define name="search">
+                <ui:include src="template/search.xhtml"/>
+            </ui:define>
+
+            <ui:define name="logo"/>
+
+            <ui:define name="top">     
+            </ui:define>
+
+            <ui:define name="menu">
+                <ui:include src="menu.xhtml" />
+            </ui:define>
+
+            <ui:param name="leftWidth" value="200px"/>
+            <ui:define name="left">
+                <ui:include src="tieredMenu.xhtml"/>
+            </ui:define>
+
+            <ui:param name="right" value="false"/>
+
+            <ui:define name="content">               
+                <h:panelGrid columns="1" style="margin-left:auto;margin-right:auto;width:80%; padding-bottom: 50px;">
+                    <!--Small writeup of the amazing services and testimonials
+                    we offer at Vegan Electro-->
+                <div>
+                    <h2>Services</h2>
+                    Here at Vegan Electronics, we are committed to working to make our 
+                    business one of the most innovative. Our products are wholly sourced
+                    as being one hundred percent vegan. We sell a variety of products including
+                    desktop computers, laptops, tablets, and cell phones. All products
+                    have been rigorously tested to pass our high standards. Just listen 
+                    to some of our customer reviews!
+                </div>
+                <h3>Sally</h3>
+                <div>
+                    Vegan Electronics is a must for anyone thinking about the
+                    environment in 2020! I can't believe the selection and prices!
+                    I would absolutely recommend them. 8/8
+                </div>
+                <h3>Dave</h3>
+                <div>
+                    As a devout vegan, I love that Vegan Electronics are a company 
+                    catered to my lifestyle. You won't regret your purchase.
+                </div>
+                </h:panelGrid>   
+            </ui:define>
+
+            <ui:define name="bottom">
+                SLCC ASDV © 2020. All Rights Reserved.
+            </ui:define>
+
+        </ui:composition>
+    </h:body>
+</html>
