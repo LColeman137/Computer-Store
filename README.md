@@ -1,7 +1,7 @@
 # Computer-Store
 A small website that sells computers and phones.
 
-##Features:
+## Features:
 * a stylish homepage
 * sign up to create an account
 * the ability to "buy" products using Simplify API
